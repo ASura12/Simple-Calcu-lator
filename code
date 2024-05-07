@@ -1,0 +1,78 @@
+#include<iostream>
+
+using namespace std;
+
+int HCF(int a,int b){
+    int gcd;
+    for(int i = 1;i<=a && i<= b;i++)
+    {
+        
+        if(a % i == 0 && b %i == 0)
+        {
+            gcd = i;
+            cout<<" "<<gcd<<endl;
+        }
+    }
+    cout<<"The value oF HCF of two numbers "<<a<<" and "<<b<<" is "<<gcd;
+    return 0;
+}
+
+int GCD_LCM(int a,int b){
+    int gcd,lcm;
+    for(int i = 1;i<=a/2;i++)
+    {
+        if(a % i == 0 && b %i == 0)
+        {
+            gcd = i;
+            cout<<" "<<gcd<<endl;
+        }
+    }
+    lcm = (a * b)/gcd;
+    cout<<"LCM is = "<<lcm;
+    return 0;
+}
+
+int main(){
+char op;
+float a,b;
+cout<<"CALCULATOR"<<endl;
+cout<<"--------------------"<<endl;
+cout<<" 1. ADDITION "<<endl;
+cout<<" 2. SUBSTRACTION "<<endl;
+cout<<" 3. MULTIPLICATION "<<endl;
+cout<<" 4. DIVISION "<<endl;
+cout<<" 5. HCF "<<endl;
+cout<<" 6. LCM "<<endl;
+cout<<" 7. EXIT "<<endl;
+cout<<"--------------------"<<endl;
+cout<<" "<<endl;
+cout<<"Enter the operator : "<<endl;
+cin>>a>>b;
+cout<<"Choose operation : ";
+cin>>op;
+switch(op)
+{
+case '1':
+cout<<" "<<a<<" +"<<" "<<b<<" = "<<" "<<a+b;
+break; 
+case '2':
+cout<<" "<<a<<" -"<<" "<<b<<" = "<<" "<<a-b;
+break; 
+case '3':
+cout<<" "<<a<<" *"<<" "<<b<<" = "<<" "<<a*b;
+break; 
+case '4':
+cout<<" "<<a<<" /"<<" "<<b<<" = "<<" "<<a/b;
+break; 
+case '5':
+HCF(a,b);
+break; 
+case '6':
+GCD_LCM(a,b);
+break;
+default:
+cout<<"Exit";
+break;
+}
+return 0;
+}
